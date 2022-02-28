@@ -6,25 +6,25 @@ const initialState={
 
 const counterReducer=(state=initialState, action)=>{
     switch(action.type){
-        case actionTypes.COUNT_INCREMENT_SUCCESS:
+        case actionTypes.COUNT_INCREMENT:
             return{
                 ...state,
                 count: state.count + 1
             }
-        case actionTypes.COUNT_DECREMENT_SUCCESS:
+        case actionTypes.COUNT_DECREMENT:
             return{
                 ...state,
                 count : state.count - 1
             }
-        case actionTypes.COUNT_INCREMENT_NUMBER_SUCCESS:
+        case actionTypes.COUNT_INCREMENT_NUMBER:
             return{
                 ...state,
-                count: state.count + Number(action.payload.payload)
+                count: state.count + Number(action.payload)
             }
-        case actionTypes.COUNT_DECREMENT_NUMBER_SUCCESS:
+        case actionTypes.COUNT_DECREMENT_NUMBER:
             return{
                 ...state,
-                count: state.count - Number(action.payload.payload)
+                count: state.count - Number(action.payload)
             }
         default:
             return state

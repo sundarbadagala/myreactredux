@@ -6,15 +6,15 @@ const initialState={
 
 const todoReducer=(state=initialState, action)=>{
     switch(action.type){
-        case actionTypes.CREATE_TODO_SUCCESS:
+        case actionTypes.CREATE_TODO:
             return{
                 ...state,
-                todos : [...state.todos, action.payload.payload]
+                todos : [...state.todos, action.payload]
             }
-        case actionTypes.DELETE_TODO_SUCCESS:
+        case actionTypes.DELETE_TODO:
             return{
                 ...state,
-                todos : state.todos.filter(item => item.id !== action.payload.payload)
+                todos : state.todos.filter(item => item.id !== action.payload)
             }
         default:
             return state
